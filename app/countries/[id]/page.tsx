@@ -201,8 +201,16 @@ const countryData: Record<
   },
 }
 
-export default function CountryDetailPage({ params }: { params: { id: string } }) {
-  const countryId = Number.parseInt(params.id)
+// export default function CountryDetailPage({ params }: { params: { id: string } }) {
+//   const countryId = Number.parseInt(params.id)
+//   const country = countryData[countryId]
+
+export default function CountryPage({
+  params,
+}: {
+  params: { id: string }
+}) {
+  const countryId = Number(params.id)
   const country = countryData[countryId]
 
   if (!country) {
