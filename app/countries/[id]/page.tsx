@@ -205,7 +205,11 @@ const countryData: Record<
 //   const countryId = Number.parseInt(params.id)
 //   const country = countryData[countryId]
 
-export default function CountryPage({ params }: { params: { id: string } }) {
+interface CountryPageProps {
+  params: { id: string }
+}
+
+export default async function CountryPage({ params }: CountryPageProps) {
   const countryId = Number(params.id)
   const country = countryData[countryId]
 
