@@ -205,13 +205,22 @@ const countryData: Record<
 //   const countryId = Number.parseInt(params.id)
 //   const country = countryData[countryId]
 
-interface CountryPageProps {
+// interface CountryPageProps {
+//   params: { id: string }
+// }
+
+// export default async function CountryPage({ params }: CountryPageProps) {
+//   const countryId = Number(params.id)
+//   const country = countryData[countryId]
+
+type Props = {
   params: { id: string }
 }
 
-export default async function CountryPage({ params }: CountryPageProps) {
+export default function CountryPage({ params }: Props) {
   const countryId = Number(params.id)
   const country = countryData[countryId]
+
 
   if (!country) {
     return (
